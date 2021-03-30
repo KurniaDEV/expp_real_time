@@ -1,0 +1,63 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>for you</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Six Revisions">
+  <meta name="description" content="How to use the CSS background-size property to make an image fully span the entire viewport.">
+  <link rel="icon" href="http://sixrevisions.com/favicon.ico" type="image/x-icon" />
+  <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
+  
+
+  <!-- Not required: presentational-only.css only contains CSS for prettifying the demo -->
+  <link rel="stylesheet" href="presentational-only/presentational-only.css">
+
+  <!-- responsive-full-background-image.css stylesheet contains the code you want -->
+  <link rel="stylesheet" href="responsive_Background.css">
+  
+  <script src="assets/js/jQuary-3.5.1.full.js"></script>
+  <script>
+    $(document).ready(function()
+{
+  
+  var $clock = $('.content'),
+      $text2= $('.text2')
+  $clock.click(function(){
+    $clock.fadeOut(900); 
+    $text2.fadeIn(1100);
+});
+});
+  </script>
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+</head>
+<body onload="startTime()">
+  
+  <header class="container">
+    <section class="content">
+      <a class="clock" href="#" id="txt"></a>
+      <p class="text" id="me"><b>Click Me</b></p>
+    </section>
+    <div class="text2"><p>Hey Good morning :)</p></div>
+
+  </header>
+</body>
+</html>
